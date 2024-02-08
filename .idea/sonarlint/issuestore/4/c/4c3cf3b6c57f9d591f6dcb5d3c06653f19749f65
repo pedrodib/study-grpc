@@ -1,0 +1,39 @@
+
+u
+java:S1488Ó"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+d	java:S116…"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıÅ
+g	java:S116©"QRename this field "email_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶å¶ä
+f	java:S116Í"PRename this field "from_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï‘¤Ó
+j	java:S116ñ"TRename this field "fromName_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åîà‘
+n	java:S116•"SRename this field "replyTo_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰½œ©ÿÿÿÿÿ
+i	java:S116¹"SRename this field "subject_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Úß÷
+n	java:S116İ"SRename this field "message_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇŒÂŠúÿÿÿÿ
+€
+java:S4144Ö
+"dUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 1341.(©ûËşÿÿÿÿ
+n
+java:S3077…"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ıÅ
+n
+java:S3077©"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(¶å¶ä
+n
+java:S3077Í"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(Ï‘¤Ó
+n
+java:S3077ñ"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(åîà‘
+s
+java:S3077•"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(‰½œ©ÿÿÿÿÿ
+n
+java:S3077¹"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(–Úß÷
+s
+java:S3077İ"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ÇŒÂŠúÿÿÿÿ
+]
+java:S1126Ş"AReplace this if-then-else statement by a single return statement.(®Èäîÿÿÿÿÿ
+i	java:S116”"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö÷“„üÿÿÿÿ
+g	java:S116à"QRename this field "email_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ò¹Ø
+k	java:S116¬"PRename this field "from_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıÄ‚Úşÿÿÿÿ
+j	java:S116ø"TRename this field "fromName_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù„Ï¹
+i	java:S116Ä"SRename this field "replyTo_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·©Ä»
+n	java:S116	"SRename this field "subject_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïë²¤üÿÿÿÿ
+n	java:S116Ü	"SRename this field "message_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ«Ï‚úÿÿÿÿ
+?	java:S108ö")Either remove or fill this block of code.(º„ç½
+o
+java:S2975°"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ

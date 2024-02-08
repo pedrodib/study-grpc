@@ -1,0 +1,41 @@
+syntax="proto3";
+package dev.pedrodib.proto;
+
+import "google/protobuf/empty.proto";
+
+option java_package="proto.generated.email"; // Pacote onde serão geradas as classes do gRPC
+option java_multiple_files = true; // Caso queira que as classes sejam geradas em multiplos Arquivos
+option java_outer_classname = "EmailProtos"; // Java Class Name
+
+message Email {
+  string id = 1;
+  string email = 2;
+  string from = 3;
+  string fromName = 4;
+  string replyTo = 5;
+  string subject = 6;
+  string message = 7;
+}
+
+message Emails {
+  repeated Email emails = 1;
+}
+
+message GetEmailById {
+  string id = 1;
+}
+
+message EmailCreationResponse {
+  bool success = 1;
+  string message = 2;
+  string id = 3;
+}
+
+service EmailService {
+  rpc SendEmail(Email) returns (EmailCreationResponse) {}
+  rpc GetSentEmail(GetEmailById) returns (Email) {}
+  rpc GetEmails(google.protobuf.Empty) returns (Emails) {}
+}
+
+
+
