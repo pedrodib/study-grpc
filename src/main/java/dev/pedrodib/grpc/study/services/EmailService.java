@@ -14,14 +14,11 @@ public class EmailService extends EmailServiceGrpc.EmailServiceImplBase {
     @Override
     public void sendEmail(Email request, StreamObserver<EmailCreationResponse> responseObserver) {
         // Sent Email
-        EmailCreationResponse.Builder response = EmailCreationResponse.newBuilder();
-        Email.Builder email = request.toBuilder();
-
-        email.setId(UUID.randomUUID().toString());
-
-        response.setId(email.getId());
-        response.setSuccess(true);
-        response.setMessage("Sent");
+        Email.Builder email = request.toBuilder().setId(UUID.randomUUID().toString());
+        EmailCreationResponse.Builder response = EmailCreationResponse.newBuilder()
+            .setId(email.getId())
+            .setSuccess(true)
+            .setMessage("Sent");
 
         responseObserver.onNext(response.build());
         responseObserver.onCompleted();
@@ -29,15 +26,15 @@ public class EmailService extends EmailServiceGrpc.EmailServiceImplBase {
 
     @Override
     public void getSentEmail(GetEmailById request, StreamObserver<Email> responseObserver) {
-        Email.Builder email = Email.newBuilder();
+        Email.Builder email = Email.newBuilder()
+            .setId(request.getId())
+            .setEmail("pedrohenrique635@hotmail.com")
+            .setReplyTo("contato@pedrodib.dev")
+            .setFrom("contato@pedrodib.dev")
+            .setFromName("Dev Pedro Dib")
+            .setSubject("Este é um teste de gRpc")
+            .setMessage("<h1>Teste</h1>");
 
-        email.setId(request.getId());
-        email.setEmail("pedrohenrique635@hotmail.com");
-        email.setReplyTo("contato@pedrodib.dev");
-        email.setFrom("contato@pedrodib.dev");
-        email.setFromName("Dev Pedro Dib");
-        email.setSubject("Este é um teste de gRpc");
-        email.setMessage("<h1>Teste</h1>");
 
         responseObserver.onNext(email.build());
         responseObserver.onCompleted();
@@ -47,28 +44,23 @@ public class EmailService extends EmailServiceGrpc.EmailServiceImplBase {
     public void getEmails(Empty request, StreamObserver<proto.generated.email.Emails> responseObserver) {
         proto.generated.email.Emails.Builder emails = proto.generated.email.Emails.newBuilder();
 
-        Email.Builder email1 = Email.newBuilder();
+        emails.addEmails(Email.newBuilder()
+            .setId(UUID.randomUUID().toString())
+            .setEmail("pedrodib1@pedrodib.dev")
+            .setReplyTo("contato@pedrodib.dev")
+            .setFrom("contato@pedrodib.dev")
+            .setFromName("Dev Pedro Dib")
+            .setSubject("Este é um teste de gRpc")
+            .setMessage("<h1>Teste</h1>"));
 
-        email1.setId(UUID.randomUUID().toString());
-        email1.setEmail("pedrodib1@pedrodib.dev");
-        email1.setReplyTo("contato@pedrodib.dev");
-        email1.setFrom("contato@pedrodib.dev");
-        email1.setFromName("Dev Pedro Dib");
-        email1.setSubject("Este é um teste de gRpc");
-        email1.setMessage("<h1>Teste</h1>");
-
-        Email.Builder email2 = Email.newBuilder();
-
-        email2.setId(UUID.randomUUID().toString());
-        email2.setEmail("pedrodib2@pedrodib.dev");
-        email2.setReplyTo("contato@pedrodib.dev");
-        email2.setFrom("contato@pedrodib.dev");
-        email2.setFromName("Dev Pedro Dib");
-        email2.setSubject("Este é um teste de gRpc");
-        email2.setMessage("<h1>Teste</h1>");
-
-        emails.addEmails(email1);
-        emails.addEmails(email2);
+        emails.addEmails(Email.newBuilder()
+            .setId(UUID.randomUUID().toString())
+            .setEmail("pedrodib2@pedrodib.dev")
+            .setReplyTo("contato@pedrodib.dev")
+            .setFrom("contato@pedrodib.dev")
+            .setFromName("Dev Pedro Dib")
+            .setSubject("Este é um teste de gRpc")
+            .setMessage("<h1>Teste</h1>"));
 
         responseObserver.onNext(emails.build());
         responseObserver.onCompleted();

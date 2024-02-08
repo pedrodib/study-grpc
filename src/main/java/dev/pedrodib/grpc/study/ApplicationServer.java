@@ -10,9 +10,11 @@ public class ApplicationServer {
     private static final Logger logger = Logger.getLogger(ApplicationServer.class.getName());
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        Server server = ServerBuilder.forPort(50052).addService(new dev.pedrodib.grpc.study.services.EmailService()).build();
-
-        server.start();
+        Server server = ServerBuilder
+                .forPort(50052)
+                .addService(new dev.pedrodib.grpc.study.services.EmailService())
+                .build()
+                .start();
 
         logger.info("Server started on Port " + server.getPort());
 
